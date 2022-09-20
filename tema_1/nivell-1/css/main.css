@@ -8,18 +8,24 @@ main {
     height: 100vh;
     display: grid;
     grid-row-gap: 10px;
-    grid-template-areas:
-        "header header header"
-        "contenido contenido dreta"
-        "footer footer footer";
+    grid-template-columns: 1fr;
     grid-template-rows: auto 5fr auto;
 
 }
 
-header {
-    grid-area: header;
-    border: 15px solid black;
+main > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: black;
+    border: 15px solid black;
+}
+
+/* ------------ HEADER ------------ */
+main > header {
+    display: grid;
+    grid-gap:15px;
+    grid-template-columns: 1fr;
 }
 
 main > header > #top {
@@ -42,101 +48,139 @@ main > header > #banner {
     background-color: #fed460;
     border: 15px solid #f07b3f;
     height:20px;
-    margin-top:15px;
 }
 
-main > footer {
-    background-color: #e6af2e;
-    border: 15px solid black;
-    height:20px;
-}
-article {
-    grid-area: contenido;
-    background-color: #4e4e6a;
+/* ------------ SECTION ------------ */
+main > section {
     display: grid;
     grid-gap:15px;
-    grid-template-columns: 1fr 1fr;
-    border: 15px solid black;
-    padding: 15px;
-    grid-template-rows: repeat(3, minmax(20px, auto));
+    grid-template-columns: 2fr 1fr;
 }
-article > * {
+
+main > section > article {
+    height: 100%;
+    background-color: #4e4e6a;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, minmax(20px, auto));
+    padding: 15px;
+}
+
+main > section > article > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #1f6cb0;
 }
-article div:nth-child(5){
+
+main > section > article div:nth-child(5){
     grid-column: 1 / span 2;
     background-color: #70a3c4;
 }
 
-aside {
-    grid-area: dreta;
-    border: 15px solid black;
-    border-left:0px;
+main > section > aside {
+    height: 100%;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 20px);
     background-color: #f73f52;
     padding: 15px;
 }
-aside > * {
+
+main > section > aside > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #feea85;
+}
+
+/* ------------ FOOTER ------------ */
+main > footer {
+    background-color: #e6af2e;
     height:20px;
-    margin-bottom: 10px;
 }
 
 footer {
-    grid-area: footer;
     background-color: black;
 }
 
+
+
+/* *********************************************************************** */
+/* ***************************** MEDIA *********************************** */
+/* *********************************************************************** */
+
 @media (min-width:600px) and (max-width: 800px) {
-    main {
-        grid-template-areas:
-            "header"
-            "contenido"
-            "dreta"
-            "footer";
+
+    main > section {
+        background-color: #feff03;
+        border:15px solid #feff03;
         grid-template-columns: 1fr;
-    }
-    article{
-        border:15px solid #feff03;
-    }
-    aside{
-        margin-top:-15px;
-        border:15px solid #feff03;
     }
 }
 
 @media (max-width: 599px) {
-    main {
-        grid-template-areas:
-            "header"
-            "contenido"
-            "dreta"
-            "footer";
-        grid-template-columns: 1fr;
+
+    main > * {
+        border: 25px solid black;
     }
+
+    /* ------------ HEADER ------------ */
     main > header > #top {
         background-color: #2d4059;
         display: grid;
-        grid-gap:15px;
+        grid-gap:25px;
         grid-template-columns: 1fr;
-        padding: 15px;
+        padding: 25px;
     }
 
-    article {
-        background-color: #4e4e6a;
+    main > header > #top > * {
+        height:30px;
+    }
+
+    main > header > #banner {
+        border: 25px solid #f07b3f;
+        height:30px;
+    }
+
+    /* ------------ SECTION ------------ */
+    main > section {
+        background-color: #feff03;
+        border:25px solid #feff03;
+        grid-template-columns: 1fr;
+    }
+
+    main > section > article {
+        height:100%;
+        background-color: #09506f;
         display: grid;
-        grid-gap:15px;
+        grid-gap: 25px;
         grid-template-columns: 1fr;
-        border:15px solid #feff03;
-        padding: 15px;
-        grid-template-rows: repeat(5, minmax(20px, auto));
+        grid-template-rows: repeat(5, minmax(30px, auto));
     }
 
-    article div:nth-child(5){
+    main > section > article > * {
+        background-color: #61959c;
+    }
+    
+    main > section > article div:nth-child(5){
         grid-column: 1;
+        background-color: #a3ddcb;
     }
 
-    aside{
-        margin-top:-15px;
-        border:15px solid #feff03;
+    main > section > aside {
+        background-color: #fd7b54;
     }
+    
+    main > section > aside > * {
+        background-color: #fdb36b;
+        height:30px;
+    }
+    /* ------------ FOOTER ------------ */
+    main > footer {
+        height:30px;
+    }
+
 }

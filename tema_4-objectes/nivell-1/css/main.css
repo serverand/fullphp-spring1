@@ -1,0 +1,15 @@
+body {font-family: sans-serif;font-size: 12px;}
+header{
+    background-color: #ddd;
+    padding: 15px;
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 40px;
+}
+h3 {
+    border-bottom: 1px solid #ccc;
+    color: darkorange;
+}
+.resposta{
+    line-height: 20px;
+    margin-bottom: 40px;
+}

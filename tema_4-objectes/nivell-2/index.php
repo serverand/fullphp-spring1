@@ -18,29 +18,17 @@
 
 			<h3>Exercici 1</h3>
             <?php
-            $pokerDice = new PokerDice(); 
-            $valor_numeric = $pokerDice->throw(); 
-            $valor_dau = $pokerDice->shapeName($valor_numeric);
-            $valor_numeric_5 = $pokerDice->tirada(); 
-            $valor_dau_5 = $pokerDice->getTotalThrows(); 
+            $tirada = array();
+            for ($x=1; $x<=5; $x++){
+                $num = PokerDice::getNum();
+                array_push($tirada, PokerDice::shapeName($num));
+            }
             ?>
             <div class="resposta">
                 <table>
                     <tr>
-                        <td>Resposta (valor numeric): </td>
-                        <td><?php echo $valor_numeric; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Resposta (valor dau): </td>
-                        <td><?php echo $valor_dau; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Resposta (valor numeric 5 tirades): </td>
-                        <td><?php echo $valor_numeric_5; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Resposta (valor dau 5 tirades): </td>
-                        <td><?php echo $valor_dau_5; ?></td>
+                        <td>Resposta: </td>
+                        <td><?php echo implode(",",$tirada); ?></td>
                     </tr>
                 </table>
             </div>

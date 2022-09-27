@@ -5,6 +5,11 @@ html, body {
     color:white;
 }
 
+main {
+    max-width:1200px;
+    margin: 0 auto;
+}
+
 main > * {
     background-color: black;	
     border:15px solid black;
@@ -28,7 +33,7 @@ main > header > #top {
 
 main > header > #top > * {
     background-color: #ea5455;
-    height:20px;
+    height:15px;
     text-align: center;
     flex: 1;
 }
@@ -42,8 +47,8 @@ main > header > #banner {
     display: flex;
     background-color: #fed460;
     border:15px solid #f07b3f;
-    height:20px;
-    margin-top: 10px;
+    height:15px;
+    margin-top: 7px;
 }
 
 /* ********************* SECTION *********************** */
@@ -69,13 +74,13 @@ main > section > article > * > *{
 }
 main > section > article > * > div:nth-child(2){
     margin-left:15px;
-    height: 20px;
+    height: 15px;
 }
 
 main > section > article > div:nth-child(3) {
     margin-bottom: 0px;
     background-color: #70a3c4;
-    height: 20px;
+    height: 15px;
 }
 
 main > section > aside {
@@ -87,17 +92,17 @@ main > section > aside {
 
 main > section > aside > *{
     background-color: #feea85;
-    height: 20px;
+    height: 15px;
 }
 
 main > section > aside > div:nth-child(2) {
-    margin-top: 15px;
+    margin-top: 7px;
 }
 
 /* *********************** FOOTER ********************* */
 main > footer {
     background-color: #e6af2e;
-    height:20px;
+    height:15px;
 }
 
 
@@ -110,14 +115,47 @@ main > footer {
     main > * {
         border:20px solid black;
     }
+    /* ********************* HEADER *********************** */
+    main > header > #top {
+        border:20px solid #2d4059;
+    }
+    main > header > #top > * {
+        height:20px;
+    }
+    main > header > #banner {
+        height:20px;
+        border:20px solid #f07b3f;
+    }
     /* ********************* SECTION *********************** */
     main > section {
         background-color: #feff03;
         border:20px solid #feff03;
         display: block;
     }
+    main > section > article {
+        border:20px solid #4e4e6a;
+    }
+    main > section > article > * {
+        margin-bottom: 20px;
+    }
+    main > section > article > * > div:nth-child(2){
+        height: 20px;
+    }
+    main > section > article > div:nth-child(3) {
+        height: 20px;
+    }
     main > section > aside {
         margin: 20px 0 0 0;
+    }
+    main > section > aside > *{
+        height: 20px;
+    }
+    main > section > aside > div:nth-child(2) {
+        margin-top: 10px;
+    }
+    /* *********************** FOOTER ********************* */
+    main > footer {
+        height:20px;
     }
 
 }
@@ -125,13 +163,13 @@ main > footer {
 @media (max-width: 599px) {
 
     main > * {
-        border:25px solid black;
+        border:30px solid black;
     }
     /* ******************** HEADER ************************* */
     main > header > #top {
         display: block;
         background-color: #2d4059;
-        border:25px solid #2d4059;
+        border:30px solid #2d4059;
         justify-content: space-between;
     }
     
@@ -142,14 +180,14 @@ main > footer {
     }
     
     main > header > #top > #logo {
-        margin: 0px 0px 25px 0px;
+        margin: 0px 0px 30px 0px;
     }
     main > header > #top > #menu {
-        margin: 0px 0px 25px 0px;
+        margin: 0px 0px 30px 0px;
     }
 
     main > header > #banner {
-        border:25px solid #f07b3f;
+        border:30px solid #f07b3f;
         height:30px;
         margin-top: 25px;
     }
@@ -159,14 +197,14 @@ main > footer {
         display: flex;
         flex-direction: column;
         background-color: #fee228;
-        border:25px solid #fee228;
+        border:30px solid #fee228;
     }
     
     main > section > article {
         display: flex;
         flex-direction: column;
         background-color: #09506f;
-        border:25px solid #09506f;
+        border:30px solid #09506f;
     }
     
     main > section > article > * {
@@ -175,7 +213,7 @@ main > footer {
     }
     main > section > article > * > div{
         background-color: #61959c;
-        margin-bottom: 25px;
+        margin-bottom: 30px;
         height: 30px;
         flex:auto;
     }
@@ -192,12 +230,16 @@ main > footer {
     main > section > aside {
         margin: 30px 0 0 0;
         background-color: #fd7b54;
-        border:25px solid #fd7b54;
+        border:30px solid #fd7b54;
     }
     
     main > section > aside > *{
         background-color: #fdb36b;
         height: 30px;
+    }
+
+    main > section > aside > div:nth-child(2) {
+        margin-top: 15px;
     }
 
     /* *********************** FOOTER ********************* */
